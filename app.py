@@ -52,7 +52,7 @@ X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
 
 ## classifier
 clf = BernoulliNB(alpha = .3)
-clf.fit(X_train_tfidf,data['label'])
+clf.fit(X_train_tfidf,data['succes'])
 
 def getPredictions(clf,count_vect,tfidf_transformer,X_test):
 
