@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-	return render_template("")
+	return render_template("test.html")
 
 @app.route("", methods=["POST"])
 def upload():
