@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
     <link rel="stylesheet" href="{{ url_for('static', filename='fonts/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Pricing-Table-Style-01.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Pricing-Table-Style-011.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Pricing-Tables.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Pricing-Tables1.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
 </head>
 
@@ -29,24 +34,49 @@
         <div class="result" style="text-align: center; font-family:Bebas; font-size: 40px; color: #ffffff; padding-top: 140px; padding-bottom: 140px">
             <h1 class="display-2">MLR-PRO</h1>
             <p class="display-3" style="font-family:Bebas Neue; font-type:normal;text-align: center; margin:15%; font-size: 25pt;" > {{ sonuc }}</p>
-            <div style="text-align: center;">
-        <table  style="width:100%;text-align: center;">
-
-          <tr>
-            <td><a href="http://udacity.com"><img style="width: 400px;" src="{{ url_for('static', filename='img/uda.png') }}"></a></td>
-            <td><a href="http://hackerrank.com"><img style="width: 400px;" src="{{ url_for('static', filename='img/hac.png') }}"></a></td>
-
-          </tr>
-          <tr>
-            <td><a href="http://www.coursera.org"><img style="width: 400px;" src="{{ url_for('static', filename='img/cou.png') }}"></a></td>
-            <td><a href="http://edx.org"><img style="width: 400px;" src="{{ url_for('static', filename='img/edx.png') }}"></a></td>
-
-          </tr>
-
-        </table>
-    </div>
+            <div style="text-align: center;"></div>
         </div>
 
+    </div>
+
+    <div class="jumbotron hero" style="padding-left:25px;">
+        <section class="pricing-table" style="width:959px;padding-left:30px;">
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <div class="pricingTable purple">
+                        <div class="pricingTable-header">
+                            <h3>UDACITY </h3><span style="padding-bottom:10px;">Lorem Ipsum</span><img src="{{ url_for('static', filename='img/udacity_share-46db4b8faf075a5af5a1070a7fa0ad3639783609ff45f447e4ea467fe3aa9d32.png') }}" style="width:270px;"></div>
+                        <div class="pricing-plans"><span class="price-value"><span>Explore More</span></span>
+                        </div>
+                        <div class="pricingContent"></div>
+                        <div class="pricingTable-sign-up"><a href="#" class="btn btn-block" style="background-color:#6d8de1;">Link</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="pricingTable green">
+                        <div class="pricingTable-header">
+                            <h3>HACKERRANK </h3><span style="padding-bottom:10px;">Lorem Ipsum</span><img src="{{ url_for('static', filename='img/udacity_share-46db4b8faf075a5af5a1070a7fa0ad3639783609ff45f447e4ea467fe3aa9d32.png') }}" style="width:270px;"></div>
+                        <div class="pricing-plans"><span class="price-value"><i class="fa fa-usd"></i><span>10 </span></span><span class="month">/month </span></div>
+                        <div class="pricingContent">
+                            <ul></ul>
+                        </div>
+                        <div class="pricingTable-sign-up"><a href="#" class="btn btn-block" style="background-color:#6d8de1;">Link</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="pricingTable yellow">
+                        <div class="pricingTable-header">
+                            <h3>COURSERA </h3><span style="padding-bottom:10px;">Lorem Ipsum</span><img src="{{ url_for('static', filename='img/udacity_share-46db4b8faf075a5af5a1070a7fa0ad3639783609ff45f447e4ea467fe3aa9d32.png') }}" style="width:270px;"></div>
+                        <div class="pricing-plans"><span class="price-value"><i class="fa fa-usd"></i><span>10 </span></span><span class="month">/month </span></div>
+                        <div class="pricingContent"></div>
+                        <div class="pricingTable-sign-up"><a href="#" class="btn btn-block" style="background-color:#6d8de1;">Link</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="pricing-area text-center"></div>
+            </div>
+        </section>
     </div>
 
    <footer class="site-footer" style="padding-top:-1px;margin-top:-33px;">
