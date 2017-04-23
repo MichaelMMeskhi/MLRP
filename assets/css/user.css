@@ -1,23 +1,6 @@
 .navbar {
   margin-bottom:0;
   border:none;
-  font-size:22px;
-  font-family:Bebas Neue;
-  font-weight:normal;
-  color:#ffffff;
-}
-
-.navbar .nav > li > a {
-    color:  #ffffff;
-}
-
-.navbar .nav > li > a:hover{
-	color: #241313;
-}
-
-.active a{
-    color: #0066FF;
-    font-weight:bold;
 }
 
 .navbar-brand .glyphicon {
@@ -25,7 +8,7 @@
 }
 
 .hero {
-  background:url(../img/bg_home.jpg) no-repeat center;
+  background:url(../../assets/img/bg_home.jpg) no-repeat center;
   background-size:cover;
   border:none;
 }
