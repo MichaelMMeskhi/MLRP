@@ -1,6 +1,6 @@
 # MLRP Project for HackHouston 2017
 
-- [Test it out!](mlrpro.com)
+[Test it out!](http://mlrpro.com)
 
 # Online resume processing application using machine learning algorithms
 ------------------------------------------------------------------------
