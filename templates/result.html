@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLRPro - Check Your Resume</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+</head>
+
+<body style="background-color:rgb(51,51,51);">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color:rgba(248,248,248,0);padding-top:35px">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand navbar-link" href="#" style="padding-left:69px;"> <img src="{{ url_for('static', filename='img/logo_colored.png') }}" style="width:150px;margin:0px;margin-top:-25px;padding-left:0px;margin-left:-5px;"></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1" style="margin-right:29px;background-color: #000000"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                     <img src="../static/img/hackhouston.png" alt="HackHouston Logo">
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+		<div class="result">
+            <h1 class="display-2">MLR-PRO</h1>
+			<h1 class="display-3" style="text-align: center; margin:15%; font-size: 25pt;" > {{ sonuc }}</h1>
+
+		</div>
+	</div>
+    <div class="col-sm-6 social-icons" style="margin-bottom:0px;"><a href="https://github.com/MichaelMMeskhi/MLRP"><i class="fa fa-github"></i></a><a href="http://stackoverflow.com/users/5110035/michaelmmeskhi"><i class="fa fa-stack-overflow"></i></a><a href="mailto:acm.mlrp@gmail.com"><i class="fa fa-envelope"></i></a></div>
+
+
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+</body>
+
+</html>
