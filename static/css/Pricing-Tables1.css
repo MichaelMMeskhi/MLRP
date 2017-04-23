@@ -1,0 +1,160 @@
+.pricing-table {
+  padding:70px 0;
+}
+
+.center {
+  padding-bottom:55px;
+  text-align:center;
+}
+
+.center h2 {
+  font-size:36px;
+  margin-bottom:20px;
+  margin-top:0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color:#4e4e4e;
+  font-family:"Open Sans";
+  font-weight:600;
+}
+
+.lead {
+  font-size:16px;
+  font-weight:400;
+  line-height:24px;
+}
+
+.plan {
+  margin-bottom:70px;
+  position:relative;
+}
+
+.pricing-area ul {
+  background:#fafafa;
+  margin:0;
+  padding:0;
+}
+
+.pricing-area li {
+  background:#fafafa;
+}
+
+.pricing-area .heading {
+  margin-left:-10px;
+  border-radius:2px 2px 0 0;
+  padding:17px 0;
+}
+
+.pricing-area ul li {
+  font-size:16px;
+  font-weight:400;
+  list-style:outside none none;
+  padding:15px 0;
+  color:#666666;
+}
+
+.pricing-area h1, .pricing-area .price {
+  font-weight:300;
+  margin-bottom:15px;
+  margin-top:0;
+  font-size:36px;
+  color:#ffffff;
+}
+
+.pricing-area h3 {
+  color:#ffffff;
+}
+
+.pricing-area .price {
+  font-size:18px;
+  font-weight:700;
+}
+
+.pricing-area ul li:nth-child(2n) {
+  background:#f5f5f5 none repeat scroll 0 0;
+}
+
+.plan-action {
+  height:42px;
+}
+
+.pricing-area .plan-action .btn::before {
+  border-color:#e24f43 transparent transparent;
+  border-radius:5px 0 0;
+  border-style:solid;
+  border-width:12px;
+  bottom:-13px;
+  content:"";
+  height:0;
+  left:-10px;
+  position:absolute;
+  width:0;
+  z-index:-1;
+}
+
+.pricing-area .plan-action .btn::after {
+  border-color:#e24f43 transparent transparent;
+  border-radius:5px 0 0;
+  border-style:solid;
+  border-width:12px;
+  bottom:-13px;
+  content:"";
+  height:0;
+  position:absolute;
+  right:-10px;
+  width:0;
+  z-index:-1;
+}
+
+.pricing-area .price.red .heading, .pricing-area .price.red .plan-action .btn {
+  background:#e24f43 none repeat scroll 0 0;
+  color:#ffffff;
+}
+
+.pricing-area .price.green .heading, .pricing-area .price.green .plan-action .btn {
+  background:#27ae60 none repeat scroll 0 0;
+  color:#ffffff;
+}
+
+.pricing-area .green .plan-action .btn::before, .pricing-area .green .plan-action .btn::after {
+  border-color:#1f8c4d transparent transparent;
+}
+
+.pricing-area .yellow .plan-action .btn::before, .pricing-area .yellow .plan-action .btn::after {
+  border-color:#d4880f transparent transparent;
+}
+
+.pricing-area .price.yellow .heading, .pricing-area .price.yellow .plan-action .btn {
+  background:#f39c12 none repeat scroll 0 0;
+  color:#ffffff;
+}
+
+.pricing-area .default .plan-action .btn::before, .pricing-area .default .plan-action .btn::after {
+  border-color:#5c5c5c transparent transparent;
+}
+
+.pricing-area .price.default .heading, .pricing-area .price.default .plan-action .btn {
+  background:#5c5c5c none repeat scroll 0 0;
+  color:#ffffff;
+}
+
+.pricing-area .plan {
+  margin-bottom:70px;
+  position:relative;
+}
+
+.pricing-area .plan-action .btn {
+  color:#ffffff;
+  margin-top:5px;
+  padding:5px 20px;
+  position:relative;
+}
+
+.pricing-area img {
+  position:absolute;
+  right:15px;
+  top:0;
+  z-index:1;
+}
+
