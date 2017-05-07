@@ -5,7 +5,6 @@ import os
 import PyPDF2
 from nltk.stem.snowball import SnowballStemmer
 from nltk.corpus import stopwords
-from sklearn.linear_model import PassiveAggressiveClassifier
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.cluster import KMeans
 from flask import render_template, Flask, request
@@ -44,17 +43,25 @@ for i in data['path']:
     pdf = open(my_file, 'rb')
     X_train.append(pdf_to_text(pdf))
 
-count_vect = CountVectorizer(lowercase = False, max_df = .6)
-tfidf_transformer = TfidfTransformer()
+
+
+count_vect = CountVectorizer(lowercase = False, min_df = 0.001)
+tfidf_transformer = TfidfTransformer(smooth_idf=False)
 X_train_counts = count_vect.fit_transform(X_train)
 X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
 
 
 
 # K-means model
-kmeans = KMeans(n_clusters = 2 , random_state = 0 ).fit(X_train_tfidf)
-print(kmeans.labels_)
-
+kmeans = KMeans(n_clusters=2,  max_iter=100 , random_state=0).fit(X_train_tfidf)
+cl = kmeans.labels_
+count=0
+for i in range(len(cl)):
+    if cl[i]!=data['succes'][i]-1:
+        #print(data['path'][i])
+        count+=1
+print(cl)
+print(count/len(cl))
 
 
 def getPredictions(clf,count_vect,tfidf_transformer,X_test):
@@ -65,7 +72,6 @@ def getPredictions(clf,count_vect,tfidf_transformer,X_test):
     X_test_tfidf = tfidf_transformer.transform(X_test_counts)
 
     return clf.predict(X_test_tfidf)
-
 
 
 app = Flask(__name__)
@@ -103,4 +109,3 @@ def upload():
 
 if __name__ == "__main__":
     app.run()
-
