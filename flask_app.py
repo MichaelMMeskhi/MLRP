@@ -7,7 +7,6 @@ from nltk.stem.snowball import SnowballStemmer
 from nltk.corpus import stopwords
 from flask import render_template, Flask, request
 import flask
-from sklearn.linear_model import PassiveAggressiveClassifier
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 
 
@@ -52,7 +51,8 @@ X_train_counts = count_vect.fit_transform(X_train)
 X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
 
 ## classifier
-clf = PassiveAggressiveClassifier(n_iter=50)
+from sklearn.linear_model import LogisticRegression
+clf = LogisticRegression()
 clf.fit(X_train_tfidf,data['succes'])
 
 def getPredictions(clf,count_vect,tfidf_transformer,X_test):
@@ -62,7 +62,7 @@ def getPredictions(clf,count_vect,tfidf_transformer,X_test):
     X_test_counts = count_vect.transform(X_test)
     X_test_tfidf = tfidf_transformer.transform(X_test_counts)
 
-    return clf.predict(X_test_tfidf)
+    return clf.predict(X_test_tfidf),clf.predict_proba(X_test_tfidf)
 
 
 
@@ -87,12 +87,12 @@ def upload():
         text=pdf_to_text(file)
         X_test=[]
         X_test.append(text)
-        result= getPredictions(clf,count_vect,tfidf_transformer,X_test)
+        result, probs = getPredictions(clf,count_vect,tfidf_transformer,X_test)
 
     if result[0]==1:
-        return render_template("result.html" ,sonuc="Your resume looks great! Here are some companies, You may want to consider: Apple, Hewlett-Packard, IBM, Amazon, Microsoft, Google, Intel, Cisco Systems, Oracle, Qualcomm, EMC, Xerox, Danaher, eBay, Uber, Plantair, Snapchat, Github, HackerRank, Twitter, Facebook, Texas Instruments, Quora, Intuit, Infosys, LinkedIn, Yahoo!, Kaspersky, Nvidia, AMD")
+        return render_template("result.html" , prob1= probs[0][0],prob2= probs[0][1], sonuc="Your resume looks great! Here are some companies, You may want to consider: Apple, Hewlett-Packard, IBM, Amazon, Microsoft, Google, Intel, Cisco Systems, Oracle, Qualcomm, EMC, Xerox, Danaher, eBay, Uber, Plantair, Snapchat, Github, HackerRank, Twitter, Facebook, Texas Instruments, Quora, Intuit, Infosys, LinkedIn, Yahoo!, Kaspersky, Nvidia, AMD")
     elif result[0]==2:
-        return render_template("result.html", sonuc="Your resume looks good but you need some improvement. Get experience from this companies: BMC Software, Pros Holding Inc., NetIQ, Quorum Business Solutions Inc, Alert Logic Inc., HCSS.")# waiting for tiers
+        return render_template("result.html", prob1= probs[0][0],prob2= probs[0][1],sonuc="Your resume looks good but you need some improvement. Get experience from this companies: BMC Software, Pros Holding Inc., NetIQ, Quorum Business Solutions Inc, Alert Logic Inc., HCSS.")# waiting for tiers
 
 
 
