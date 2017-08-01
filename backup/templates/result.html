@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLRPro - Result!!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Pricing-Table-Style-01.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Pricing-Table-Style-011.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Pricing-Tables.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Pricing-Tables1.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user2.css') }}">
+</head>
+
+<body style="background-color:rgb(51,51,51);">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color:rgba(248,248,248,0);padding-top:35px">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand navbar-link" href="../index.html" style="padding-left:69px;"> <img src="{{ url_for('static', filename='img/logo_colored.png') }}" style="width:150px;margin:0px;margin-top:-25px;padding-left:0px;margin-left:-5px;"></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1" style="margin-right:29px;background-color: #000000"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                     <img src="../static/img/hackhouston.png" alt="HackHouston Logo">
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron hero">
+        <div class="result" style="text-align: center; font-family:Bebas; font-size: 40px; color: #ffffff; padding-top: 140px; padding-bottom: 140px">
+            <h1 class="display-2">MLR-PRO</h1>
+            <p class="display-3" style="font-family:Bebas Neue; font-type:normal;text-align: center; margin:5%; font-size: 25pt;" > {{ sonuc }}</p>
+            
+            <div style="text-align: center;"></div>
+        </div>
+
+    </div>
+
+    <div class="jumbotron hero2" style="margin-top: -30px">
+        <section class="pricing-table" style="width:%100px;padding:10px">
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <div class="pricingTable purple">
+                        <div class="pricingTable-header">
+                            <h3>Udacity </h3><span style="padding-bottom:10px;">Learn only from the best</span><img src="{{ url_for('static', filename='img/udacity-logo.png') }}" style="width:50%;"></div>
+                        <div class="pricing-plans"><span class="price-value"><span>Explore More</span></span>
+                        </div>
+                        <div class="pricingContent"></div>
+                        <div class="pricingTable-sign-up"><a href="http://udacity.com" class="btn btn-block" style="background-color:#6d8de1;">Start Learning</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="pricingTable green">
+                        <div class="pricingTable-header">
+                            <h3>HackerRank </h3><span style="padding-bottom:10px;">Practice your coding skills</span><img src="{{ url_for('static', filename='img/hackerrank-logo.png') }}" style="width:47%;"></div>
+                        <div class="pricing-plans"><span class="price-value"><span>Solve Problems</span></span></div>
+                        <div class="pricingContent">
+                            <ul></ul>
+                        </div>
+                        <div class="pricingTable-sign-up"><a href="http://hackerrank.com" class="btn btn-block" style="background-color:#6d8de1;">Start Solving</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="pricingTable yellow">
+                        <div class="pricingTable-header">
+                            <h3>Stack Overflow </h3><span style="padding-bottom:10px;">Ask, answer, discuss</span><img src="{{ url_for('static', filename='img/so-logo.png') }}" style="width:50%;"></div>
+                        <div class="pricing-plans"><span class="price-value"><span>Help out</span></span></div>
+                        <div class="pricingContent"></div>
+                        <div class="pricingTable-sign-up"><a href="http://stackoverflow.com" class="btn btn-block" style="background-color:#6d8de1;">Start Answering</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="pricing-area text-center"></div>
+            </div>
+        </section>
+    </div>
+
+   <footer class="site-footer" style="padding-top:-1px;margin-top:-33px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h5 style="font-family:Bebas;">® 2017 All rights reserved</h5></div>
+                <div class="col-sm-6 social-icons" style="margin-bottom:0px;"><a href="https://github.com/MichaelMMeskhi/MLRP"><i class="fa fa-github"></i></a><a href="mailto:acm.mlrp@gmail.com"><i class="fa fa-envelope"></i></a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+</body>
+
+</html>

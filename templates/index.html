@@ -1,73 +1,49 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MLRPro - Check Your Resume</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
-    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Pricing-Table-Style-01.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Pricing-Table-Style-011.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Pricing-Tables.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Pricing-Tables1.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>MLRP</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
 </head>
+<body>
 
-<body style="background-color:rgb(51,51,51);">
-    <nav class="navbar navbar-default navbar-fixed-top" style="background-color:rgba(248,248,248,0);padding-top:35px">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand navbar-link" href="index.html" style="padding-left:69px;"> <img src="{{ url_for('static', filename='img/logo_colored.png') }}" style="width:150px;margin:0px;margin-top:-25px;padding-left:0px;margin-left:-5px;"></a>
-                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1" style="margin-right:29px;background-color: #000000"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-            </div>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <img src="../static/img/hackhouston.png" alt="HackHouston Logo">
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="jumbotron hero">
-<div class="col-md-4 col-md-push-7 phone-preview">
-            <div class="iphone-mockup">
-                <div class="screen"></div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row" style="margin-left:70px;margin-right:70px;">
-                <div class="col-md-6 get-it" style="margin-top:75px;padding-top:100px;padding-bottom:100px;">
-                    <h1>MLR-Pro </h1>
-                    <p>This is a simple tool that helps you find out in what tech companies can you land a job. Simply upload your resume with the upload button below, then press submit and get your result ! </p>
-                    <p>
-
-                    <form style="align-items: center; text-align: center;" method="POST" action="{{ url_for('upload') }}" enctype="multipart/form-data" >
-                        <div style = "padding-bottom:10px; text-align:center;">
-
-                            <input style="visibility: hidden;" type="file" name="file" id="file" class="inputfile"  accept="application/pdf" />
-                            <label class= "just" style="padding-top:10px;padding-left:48px;background-color:#336699;font-family:Bebas Neue;font-weight:normal;font-size:22px;color:#FFFFFF;text-align:center;" for="file">Choose a file</label>
-
-                        </div>
-                        <input  style="padding-left:70px;padding-right:70px;background-color:#333333;font-family:Bebas Neue;font-weight:normal;font-size:22px;" class ="btn btn-danger" type="submit" value="submit">
-                    </form>
-
-                </div>
-            </div>
-        </div>
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="one-half column" style="margin-top: 25%">
+        <h4>ML Resume Processing</h4>
+        <p>Upload your resume to figure out what companies you fit into and how to improve.</p>
+        <form style="align-items: center; text-align: center;" method="POST" action="{{ url_for('upload') }}" enctype="multipart/form-data" >
+            <input class ="btn btn-danger" type="submit" value="submit">
+        </form>
+      </div>
     </div>
-    <footer class="site-footer" style="padding-top:-1px;margin-top:-33px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <h5 style="font-family:Bebas;">® 2017 All rights reserved</h5></div>
-                <div class="col-sm-6 social-icons" style="margin-bottom:0px;"><a href="https://github.com/MichaelMMeskhi/MLRP"><i class="fa fa-github"></i></a><a href="http://stackoverflow.com/users/5110035/michaelmmeskhi"><i class="fa fa-stack-overflow"></i></a><a href="mailto:acm.mlrp@gmail.com"><i class="fa fa-envelope"></i></a></div>
-            </div>
-        </div>
-    </footer>
-    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
-</body>
+  </div>
 
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
 </html>
