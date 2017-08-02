@@ -38,7 +38,7 @@ THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 
 
 ## Geting ready the training data
-data=pd.read_csv('resumes.csv')
+data = pd.read_csv('resumes.csv')
 X_train=[]
 for i in data['path']:
     my_file = os.path.join(THIS_FOLDER, i)
